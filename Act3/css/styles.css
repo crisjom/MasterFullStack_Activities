@@ -1,0 +1,507 @@
+/*Selectors*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgb(231, 228, 228);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    outline: none;
+}
+
+a:visited {
+    color: black;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/*Lists*/
+
+.list-elem {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buy-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.benefit-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/*Boxes*/
+
+.section-box {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-box--mod {
+    padding: 0;
+    margin: 0;
+}
+
+.img-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 15px 15px;
+    max-width: 100%;
+}
+
+.img-box--card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 15px 15px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgb(231, 228, 228);
+    height: 30vh;
+    max-height: 200px;
+}
+
+.text-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.benefit-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.benefit-box__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.benefit-box__text {
+    display: flex;
+    max-width: 25vw;
+    padding-top: 5px;
+    margin: 0px 10px;
+}
+
+/*Images*/
+
+.img-box__img {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.img-box__tag {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 8px 8px;
+    background-color: rgb(45, 185, 45);
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/*Navigation bars*/
+
+.navbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar__list {
+    display: none;
+}
+
+.navbar__pagename {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagename {
+    padding: 6px 0px;
+}
+
+/*Sections*/
+
+.section__tittle {
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section__description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.draw-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*Buttons*/
+
+.button {
+    padding: 6px 12px;
+    border: rgb(0, 35, 133) 1px solid;
+    border-radius: 10px;
+    background-color: rgb(42, 116, 255);
+}
+
+.button:hover {
+    transition-property: background-color border-color;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-delay: 100ms;
+    background-color: rgba(54, 177, 97, 0.951);
+    border-color: rgba(54, 177, 97, 0.951);
+}
+
+.button__link {
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.button__link:visited {
+    color: white;
+}
+
+.button2 {
+    padding: 6px 12px;
+    border: rgb(0, 35, 133) 1px solid;
+    border-radius: 10px;
+    background-color: rgb(42, 116, 255);
+    max-width: 100px;
+}
+
+.button2:hover {
+    transition-property: background-color border-color;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-delay: 100ms;
+    background-color: rgba(54, 177, 97, 0.951);
+    border-color: rgba(54, 177, 97, 0.951);
+}
+
+/*Cards*/
+
+.card {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(231, 228, 228);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.card__tittle {
+    font-size: 1.25em;
+}
+
+.card__description {
+    margin-top: 20px;
+    display: flex;
+}
+
+.draw-section__card {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    background-color: rgb(232, 238, 253);
+}
+
+.draw-section__tittle {
+    font-size: 2.5em;
+}
+
+/*Forms*/
+
+.form {
+    margin-top: 10px;
+}
+
+.form__list {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__elem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input {
+    padding: 10px 5px;
+    font-size: 1em;
+    border-color: rgb(231, 228, 228);
+    border-radius: 5px;
+    border-style: solid;
+    color: rgb(156, 156, 156);
+}
+
+.input:hover {
+    border-color: black;
+}
+
+.input:focus {
+    color: black;
+}
+
+/*States*/
+
+.states--offer {
+    font-weight: bold;
+    color: rgb(239, 27, 27);
+}
+
+.price {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.filled {
+    padding: 10px 6px;
+    margin-top: 10px;
+    max-width: 70px;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+}
+
+.offer {
+    background-color: rgb(216, 30, 30);
+    color: white;
+}
+
+.new {
+    background-color: rgb(42, 116, 255);
+    color: white;
+}
+
+/*Footer*/
+
+footer {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgb(231, 228, 228);
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    gap: 3px;
+}
+
+.footer__icon {
+    width: 15px;
+    height: 15px;
+}
+
+
+/*Style for Screens*/
+
+@media screen and (min-width: 900px) {
+
+    /*Header modifications*/
+
+    header {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    /*Navigation bars modifications*/
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar__pagename {
+        font-size: 1.25em;
+    }
+
+    .navbar__list {
+        align-items: center;
+        gap: 30px;
+        display: flex;
+    }
+
+    .navbar-elem__box:hover {
+        border-bottom: black 2px solid;
+    }
+
+
+    .navbar-elem__box--button {
+        border: rgb(157, 157, 157) 1px solid;
+        border-radius: 10px;
+    }
+
+    .navbar-elem__box--button:hover {
+        transition-property: background-color border-color;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition-delay: 100ms;
+        background-color: rgba(238, 237, 237, 0.951);
+        border-color: black;
+    }
+
+    /*Lists modifications*/
+
+    .benefit-list {
+        flex-wrap: nowrap;
+    }
+
+    /*Boxes modifications*/
+
+    .section-box {
+        flex-direction: row;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 20px;
+    }
+
+    .section-box--mod {
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .section-box--flex-column {
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .flex-list {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .img-box {
+        flex-basis: 30%;
+    }
+
+    /*Cards modifications*/
+
+    .card {
+        padding: 10px 10px;
+        flex-basis: 25%;
+    }
+
+    .card__description {
+        display: flex;
+    }
+
+    .draw-section__card {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .flex-grow1 {
+        flex-basis: 30%;
+    }
+
+    .flex-grow2 {
+        flex: 1;
+    }
+
+
+
+
+
+
+}
