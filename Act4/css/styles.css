@@ -77,6 +77,15 @@ tr {
     width: 30%;
 }
 
+.product-table__cell {
+    display: flex;
+}
+
+.product-table__cell--input {
+    display: flex;
+    align-items: center;
+}
+
 .resume-table__footer {
     border-top: 1px solid rgb(231, 228, 228);
     padding-top: 12px;
