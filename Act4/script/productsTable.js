@@ -21,6 +21,7 @@ class ProductsTable {
         const productsTable = document.getElementById('product-table-id');
         this.#products.forEach(product => {
             const tableRow = document.createElement('tr');
+            tableRow.id = product.SKU;
             productsTable.appendChild(tableRow);
         });
     }
