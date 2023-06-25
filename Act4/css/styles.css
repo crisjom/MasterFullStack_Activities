@@ -49,8 +49,6 @@ p {
     padding: 0;
 }
 
-/*Tables*/
-
 table {
     border-collapse: collapse;
     width: 100%;
@@ -68,26 +66,78 @@ tr {
     display: flex;
 }
 
+input {
+    width: 50px;
+}
+
+/*Tables*/
+
 .products-table__header {
     border-bottom: 1px solid rgb(231, 228, 228);
-    justify-content: space-between;
+    
 }
 
 .products-table__header-product {
-    width: 30%;
+    width: 40%;
+}
+
+.products-table__header-others {
+    width: 20%;
+}
+
+.products-table__rows {
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(231, 228, 228);
 }
 
 .product-table__cell {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product-table__cell--input {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+}
+
+.input-quantity {
+    border-radius: 15px;
+    border: 1px solid rgb(231, 228, 228);
+    text-align: center;
+    font-size: 15px;
+    height: 50px;
+    margin-top: 3px;
+    margin: 5px;
+}
+
+.input-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+.input-button:hover {
+    transition-property: color;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-delay: 100ms;
+    color: rgb(135, 135, 135);
+    cursor: pointer;
+}
+
+.product-name {
+    padding-bottom: 10px;
 }
 
 .resume-table__footer {
     border-top: 1px solid rgb(231, 228, 228);
+    padding-top: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.resume-table__rows {
     padding-top: 12px;
     justify-content: space-between;
 }
@@ -103,7 +153,7 @@ tr {
 }
 
 .resume-table__total {
-    width: 80%; 
+    width: 70%; 
 }
 
 /*Lists*/
@@ -148,6 +198,7 @@ tr {
 .resume-list {
     flex: 1;
     padding: 12px 18px;
+    height: fit-content;
 }
 
 /*Boxes*/

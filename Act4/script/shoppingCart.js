@@ -1,87 +1,82 @@
+// Class ShoppingCart: Represents a shopping cart that contains products.
+
 class ShoppingCart {
 
-    #products
+    #products; // Private array to store the cart's products
+    #currency; // Currency used for prices
 
-    constructor(products) {
+    constructor(products, currency) {
         this.#products = products;
+        this.#currency = currency;
     }
 
-    getProducts() {
-        return this.#products;
-    }
-
-    /*
+    // updateUnits: Method to update the quantity of a product in the cart.
+    // Description --> Find the product by SKU and update the units.
+    //                Calculate the total price of the product 
+    //                and round it to 2 decimal places.
 
     updateUnits(sku, units) {
-        const product = this.#products.find(product => product.sku === sku);
+        const product = this.#products.find(product => product.SKU === sku);
         if (product) {
             product.units = units;
-            console.log(`Units updated for "${product.title}" (SKU: ${product.sku}): ${units}`);
+            product.total = (units * product.price).toFixed(2);
+            console.log(`Units updated for "${product.title}" (SKU: ${product.SKU}): ${product.units} ${product.total}`);
+            return product.total;
         } else {
             console.log(`Product with SKU "${sku}" not found in the cart.`);
         }
     }
 
+    // getProductInfo: Method to get the information of a product in the cart using its SKU
+    // Description --> Find the product by SKU and extract its information.
+    //                Round the total price to 2 decimal places. 
+    //                If the product doesn't exist, display an error message and return null.
+    //                If the product exits, return object with pruduct information.
+
     getProductInfo(sku) {
-        const product = this.#products.find(product => product.sku === sku);
+        const product = this.#products.find(product => product.SKU === sku);
         if (product) {
-            const { sku, units } = product;
-            console.log(`Product Info - SKU: ${sku}, Units: ${units}`);
-            return { sku, units };
+            const { title, price, SKU, units } = product;
+            console.log(`Product Info - title: ${product.title}, price: ${product.price} SKU: ${product.SKU}, Units: ${product.units}, Total: ${product.total}`);
+            return {
+                title: product.title,
+                SKU: product.SKU,
+                price: product.price,
+                units: product.units,
+                total: (product.price * product.units).toFixed(2)
+
+            };
         } else {
             console.log(`Product with SKU "${sku}" not found in the cart.`);
             return null;
         }
     }
 
+    // getCartTotal: Method to get the total of the cart and information of all products.
+    // Description --> Initialize the cart total and an array to store product information.
+    //                Calculate the car total. 
+    //                Store the product information in the array.
+    //                Return an object with the total, currency, and product information.
+
     getCartTotal() {
         let total = 0;
+        const productInfo = [];
+
         this.#products.forEach(product => {
             total += product.price * product.units;
+            const productData = this.getProductInfo(product.SKU);
+            productInfo.push(productData);
         });
 
-        const currency = "$"; // Set the currency according to your requirement
-
-        const productInfo = this.#products.map(product => {
-            const { sku, units } = product;
-            return { sku, units };
-        });
+        const currency = this.#currency;
 
         const cartTotal = {
-            total,
-            currency,
+            total: total.toFixed(2),
+            currency: currency,
             products: productInfo
         };
 
-        console.log("Cart Total:", cartTotal);
         return cartTotal;
     }
 
-    addItem(product) {
-        this.#products.push(product);
-        console.log(`"${product.title}" added to the cart.`);
-    }
-
-    removeItem(product) {
-        const index = this.#products.findIndex(item => item.sku === product.sku);
-        if (index !== -1) {
-            this.#products.splice(index, 1);
-            console.log(`"${product.title}" removed from the cart.`);
-        } else {
-            console.log(`Product "${product.title}" not found in the cart.`);
-        }
-    }
-
-    emptyCart() {
-        this.#products = [];
-        console.log("The cart has been emptied.");
-    }
-
-    showItems() {
-        console.log("Items in the cart:");
-        this.#products.forEach((product, index) => {
-            console.log(`${index + 1}. SKU: ${product.sku} | Title: ${product.title} | Price: ${product.price}`);
-        });
-    }
-    */
 }
