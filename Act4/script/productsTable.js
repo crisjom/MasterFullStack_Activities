@@ -95,6 +95,12 @@ class ProductsTable {
     tableRow.classList.add("products-table__rows");
     tableRow.id = product.SKU;
     tableRow.innerHTML = addProductToHTML + addQuantityToHTML + addPriceToHTML + addTotalPriceToHTML;
+    const quantityInput = tableRow.querySelector('.input-quantity');
+    quantityInput.addEventListener('input', function () {
+      if (quantityInput.value < 0) {
+        quantityInput.value = '0';
+      }
+    });
     const buttons = tableRow.querySelectorAll('.input-button');
     buttons.forEach(button => {
       button.addEventListener('click', this.inputButtonClickHandler.bind(this));
