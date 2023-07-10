@@ -1,0 +1,47 @@
+<div class="my-4">
+    <h2 class="text-2xl font-bold mb-2">Nueva publicación</h2>
+    <form [formGroup]="postForm" (ngSubmit)="addPost()" class="flex flex-col">
+        <label class="mb-2">Título:</label>
+        <input type="text" formControlName="title" class="p-2 text-black border border-gray-300 rounded mb-2">
+        <label class="mb-2">Imagen:</label>
+        <input type="url" formControlName="imageUrl" class="p-2 text-black border border-gray-300 rounded mb-2">
+        <div *ngIf="postForm.controls['imageUrl'].invalid && postForm.controls['imageUrl'].touched" class="text-red-500 mb-2">
+          URL inválida
+        </div>
+        <label class="mb-2">Texto:</label>
+        <textarea formControlName="text" class="p-2 text-black border border-gray-300 rounded mb-2"></textarea>
+        <label class="mb-2">Fecha:</label>
+        <input type="date" formControlName="date" class="p-2 text-black border border-gray-300 rounded mb-2" max="9999-12-31">
+        <div *ngIf="postForm.controls['date'].invalid && postForm.controls['date'].touched" class="text-red-500 mb-2">
+          Fecha inválida
+        </div>
+        <div class="flex justify-end">
+            <button type="submit" class="bg-gray-600 hover:bg-blue-700 text-white px-4 py-2 rounded mr-2">Publicar</button>
+            <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded" (click)="resetForm()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<div>
+  <h2 class="text-2xl font-bold mb-2">Publicaciones</h2>
+  <ul>
+    <li *ngFor="let post of posts" class="bg-gray-700 p-4 mb-4 rounded-lg flex">
+      <div class="flex-none w-1/2 md:w-1/3 lg:w-1/4 mr-4">
+        <img [src]="post.imageUrl" alt="Image" class="w-full rounded-lg">
+      </div>
+      <div class="flex-grow">
+        <a href="">
+          <h3 class="text-xl font-bold mb-2">{{ post.title }}</h3>
+        </a>
+        <p class="mb-2">{{ post.text }}</p>
+        <p class="text-gray-500">Fecha: {{ post.date }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+  
