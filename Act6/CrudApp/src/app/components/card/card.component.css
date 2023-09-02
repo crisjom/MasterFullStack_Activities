@@ -1,0 +1,9 @@
+.btn-hover-color:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+}
+
+.btn {
+  color: grey;
+}

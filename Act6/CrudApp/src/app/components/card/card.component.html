@@ -3,9 +3,27 @@
         <img src="{{ card?.image }}" alt="User Avatar" class="rounded-circle img-fluid">
         <h5 class="card-title mt-3">{{ card?.first_name }} {{ card?.last_name }}</h5>
         <div class="d-flex justify-content-between mt-3">
-            <button class="btn btn-primary"><i class="bi bi-eye"></i> Ver</button>
-            <button class="btn btn-warning"><i class="bi bi-pencil"></i> Actualizar</button>
-            <button class="btn btn-danger"><i class="bi bi-trash"></i> Borrar</button>
+            <button (click)="viewDetails(card?._id)" class="btn btn-hover-color container">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+                <p>Ver detalle</p>
+            </button>
+            <button (click)="updateUser(card?._id)" class="btn btn-hover-color container">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M200-200h56l345-345-56-56-345 345v56Zm572-403L602-771l56-56q23-23 56.5-23t56.5 23l56 56q23 23 24 55.5T829-660l-57 57Zm-58 59L290-120H120v-170l424-424 170 170Zm-141-29-28-28 56 56-28-28Z" />
+                </svg>
+                <p>Actualizar</p>
+            </button>
+            <button (click)="deleteUser(card?._id)" class="btn btn-hover-color container">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24">
+                    <path
+                        d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                </svg>
+                <p>Borrar</p>
+            </button>
         </div>
     </div>
 </div>

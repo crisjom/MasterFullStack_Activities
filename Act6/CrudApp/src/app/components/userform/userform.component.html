@@ -1,1 +1,47 @@
-<p>userform works!</p>
+<section class="mt-5 container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Nuevo Usuario</h5>
+                    <form [formGroup]="userForm" (ngSubmit)="submitUserForm()">
+                        <div class="form-group mb-4">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" id="firstName" class="form-control" formControlName="firstName">
+                            <span class="text-danger" *ngIf="userForm.controls['firstName'].hasError('minlength') && userForm.controls['firstName'].touched">El nombre debe tener al menos dos caracteres</span>
+                            <span class="text-danger" *ngIf="userForm.controls['firstName'].hasError('pattern') && userForm.controls['firstName'].touched">Nombre no válido</span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="lastName">Apellidos</label>
+                            <input type="text" id="lastName" class="form-control" formControlName="lastName">
+                            <span class="text-danger" *ngIf="userForm.controls['lastName'].hasError('minlength') && userForm.controls['firstName'].touched">El apellido debe tener al menos dos caracteres</span>
+                            <span class="text-danger" *ngIf="userForm.controls['lastName'].hasError('pattern') && userForm.controls['firstName'].touched">Apellido no válido</span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" formControlName="email">
+                            <span class="text-danger" *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">El email no es válido</span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" class="form-control" formControlName="password">
+                            <ul class="list-unstyled" *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].touched">
+                                <li class="text-danger">La contraseña debe tener al menos 8 caracteres</li>
+                                <li class="text-danger">La contraseña debe tener al menos 1 letra</li>
+                                <li class="text-danger">La contraseña debe tener al menos 1 caracter especial</li>
+                                <li class="text-danger">La contraseña debe tener al menos 1 número</li>
+                            </ul>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="image">Imagen</label>
+                            <input type="text" id="image" class="form-control" formControlName="image">
+                            <span class="text-danger" *ngIf="userForm.controls['image'].invalid && userForm.controls['image'].touched">El formato de la imagen no es valido</span>
+                        </div>
+                        <button type="submit" class="btn btn-hover-color mt-2">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

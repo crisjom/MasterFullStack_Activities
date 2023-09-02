@@ -6,12 +6,12 @@ import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 import { UserdetailsComponent } from './pages/userdetails/userdetails.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home/1', pathMatch: 'full' },
+  { path: 'home/:page', component: HomeComponent},
   { path: 'newuser', component: NewuserComponent },
-  { path: 'updateuser', component: UpdateuserComponent },
-  { path: 'userdetails', component: UserdetailsComponent},
-  { path: '**', redirectTo: 'home', pathMatch: 'full'}
+  { path: 'updateuser/:userId', component: UpdateuserComponent },
+  { path: 'userdetails/:userId', component: UserdetailsComponent},
+  { path: '**', redirectTo: 'home/1', pathMatch: 'full'}
 ];
 
 @NgModule({
